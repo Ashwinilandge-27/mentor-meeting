@@ -1,10 +1,10 @@
 <?php
 
 $conn = new mysqli(
-    "sql104.infinityfree.com",
-    "if0_42843279",
-    "Ashwini7982",
-    "if0_42843279_mentor_meeting_db",
+    "YOUR_DATABASE_HOST",
+    "YOUR_DATABASE_USERNAME",
+    "YOUR_DATABASE_PASSWORD",
+    "YOUR_DATABASE_NAME",
     3306
 );
 
