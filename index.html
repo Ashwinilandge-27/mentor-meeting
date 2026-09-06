@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Mentor Meeting Program</title>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <header>
+        <h1>College Mentor Meeting Program</h1>
+        <p>Manage Mentor Records</p>
+        <hr>
+    </header>
+
+
+    <!-- Success Message -->
+    <p id="successMessage"></p>
+
+
+    <!-- Add Mentor Form -->
+    <section>
+        <h2>Add Mentor</h2>
+
+        <form id="mentorForm">
+
+            <label for="mentorName">Mentor Name:</label>
+            <input type="text" id="mentorName">
+            <span id="mentorNameError"></span>
+            <br><br>
+
+
+            <label for="employeeId">Employee ID:</label>
+            <input type="text" id="employeeId">
+            <span id="employeeIdError"></span>
+            <br><br>
+
+
+            <label for="department">Department:</label>
+            <select id="department">
+                <option value="">Select Department</option>
+                <option value="Computer Engineering">Computer Engineering</option>
+                <option value="Information Technology">Information Technology</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Civil Engineering">Civil Engineering</option>
+                <option value="ENTC Engineering">ENTC Engineering</option>
+            </select>
+            <span id="departmentError"></span>
+            <br><br>
+
+
+            <label for="designation">Designation:</label>
+            <input type="text" id="designation">
+            <br><br>
+
+
+            <label for="maxMentees">Maximum Mentees Allowed:</label>
+            <input type="number" id="maxMentees" min="1" step="1">
+            <span id="maxMenteesError"></span>
+            <br><br>
+
+
+            <label for="photo">Profile Photo:</label>
+            <input type="file" id="photo" accept=".jpg,.jpeg,.png">
+            <span id="photoError"></span>
+            <br><br>
+
+
+            <button type="submit" id="submitButton" disabled>
+                Add Mentor
+            </button>
+
+        </form>
+    </section>
+
+    <hr>
+
+
+    <!-- Mentor List Table -->
+    <section>
+        <h2>Mentor List</h2>
+
+        <table border="1">
+
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Employee ID</th>
+                    <th>Department</th>
+                    <th>Max Mentees</th>
+                    <th>Photo</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="mentorTableBody">
+                <!-- Mentor records will be added here -->
+            </tbody>
+
+        </table>
+    </section>
+
+    <hr>
+
+
+    <!-- Edit Popup -->
+    <div id="editPopup" hidden>
+
+        <h2>Edit Mentor</h2>
+
+        <form id="editForm">
+
+            <label for="editMentorName">Mentor Name:</label>
+            <input type="text" id="editMentorName">
+            <span id="editMentorNameError"></span>
+            <br><br>
+
+
+            <label for="editEmployeeId">Employee ID:</label>
+            <input type="text" id="editEmployeeId">
+            <span id="editEmployeeIdError"></span>
+            <br><br>
+
+
+            <label for="editDepartment">Department:</label>
+            <select id="editDepartment">
+                <option value="">Select Department</option>
+                <option value="Computer Engineering">Computer Engineering</option>
+                <option value="Information Technology">Information Technology</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Civil Engineering">Civil Engineering</option>
+                <option value="ENTC Engineering">ENTC Engineering</option>
+            </select>
+            <span id="editDepartmentError"></span>
+            <br><br>
+
+
+            <label for="editDesignation">Designation:</label>
+            <input type="text" id="editDesignation">
+            <br><br>
+
+
+            <label for="editMaxMentees">Maximum Mentees Allowed:</label>
+            <input type="number" id="editMaxMentees" min="1" step="1">
+            <span id="editMaxMenteesError"></span>
+            <br><br>
+
+
+            <label for="editPhoto">Profile Photo:</label>
+            <input type="file" id="editPhoto" accept=".jpg,.jpeg,.png">
+            <span id="editPhotoError"></span>
+            <br><br>
+
+
+            <button type="submit" id="updateButton" disabled>
+                Save Changes
+            </button>
+
+            <button type="button" onclick="closeEditPopup()">
+                Cancel
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- Delete Confirmation Popup -->
+    <div id="deletePopup" hidden>
+
+        <h2>Delete Confirmation</h2>
+
+        <p>Are you sure you want to delete this mentor record?</p>
+
+        <button type="button" onclick="confirmDelete()">
+            Yes, Delete
+        </button>
+
+        <button type="button" onclick="closeDeletePopup()">
+            Cancel
+        </button>
+
+    </div>
+
+
+    <!-- Link JavaScript File -->
+    <script src="script.js"></script>
+
+</body>
+</html>
